@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SAP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body { background-color: #24303c; color: #fff; font-family: sans-serif; }
+        h1, h2, h3 { color: #fff; text-align: center; }
+        h3 { margin-top: 2rem; }
+        p { margin-top: 1rem; }
+        .container { width: 600px; margin: 0 auto; }
+        .datos-enfermero { margin-top: 2rem; }
+        .datos-medicos { margin-top: 2rem; }
+        .icono { margin-right: 1rem; }
+        .btn { color: #fff; border-color: #fff; background-color: #222; font-size: 16px; font-weight: bold; }
+        .btn:hover { background-color: #000; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Datos del Enfermero</h1>
+        <div class="datos-enfermero">
+            <h3>Información Personal</h3>
+            <div class="row">
+                <div class="col-6">
+                    <strong>Cédula:</strong> {{enfermero.cedula}}
+                </div>
+
+                <div class="col-6">
+                    <strong>Nombre:</strong> {{enfermero.nombre}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <strong>Apellido:</strong> {{enfermero.apellido}}
+                </div>
+                <div class="col-6">
+                    <strong>Correo:</strong> {{enfermero.correo}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <strong>Celular:</strong> {{enfermero.celular}}
+                </div>
+                <div class="col-6">
+                    <strong>Estado:</strong>
+                        {% if enfermero.activo %}
+                            <i class="fas fa-check"></i> Activo
+                        {% else %}
+                            <i class="fas fa-times"></i> Inactivo
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+        <br>
+        <h1>Datos Médicos</h1>
+        <div class="datos-medicos">
+            <h3>Información Médica</h3>
+            <div class="row">
+                <div class="col-6">
+                    <strong>Enfermero:</strong> {{enfermero.nombre}}
+                </div>
+                <div class="col-6">
+                    <strong>Diagnóstico:</strong> {{enfermero.dato.diagnostico}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <strong>Peso:</strong> {{enfermero.dato.peso}} kg
+                </div>
+                <div class="col-6">
+                    <strong>Altura:</strong> {{enfermero.dato.altura}} cm
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <strong>Alergias:</strong> {{enfermero.dato.alergia}}
+                </div>
+                <div class="col-6">
+                    <strong>Enfermedades de antecedentes familiares:</strong> {{enfermero.antecedentes}}
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <a href="{%url 'inicio'%}" class="btn">Menu Principal</a>
+    </div>
+</body>
+</html>

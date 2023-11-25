@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+        body { background: #24303c; }
+        table, th, td { border:1px solid black; }
+        table, th, td { border: 1px solid white; border-collapse: collapse; }
+        th, td { background-color: #96D4D4; }
+        th, td { border-style: dotted;}
+</style>
+
+<head>
+    <title>Agregar Enfermero</title>
+</head>
+
+<body>
+    <h1 style="color: white;">Agregar Enfermero</h1>
+        <form method="POST">
+            <table>{{formulario}}</table>
+            <br>
+            <input type="submit" value="Grabar">
+            {% csrf_token %}
+            <a href="{%url 'inicio'%}"><button type="button" onclick=" ">Menu Principal</button></a>
+            <br>
+            <br>
+            <img src="https://media0.giphy.com/media/9Ai5dIk8xvBm0/200w.gif?cid=6c09b95256w2ebsndgfcs8kvbrlqrfglbklusktc1cylnsw8&ep=v1_gifs_search&rid=200w.gif&ct=g.gif" width="250" height="200">
+        </form>
+</body>
+</html>

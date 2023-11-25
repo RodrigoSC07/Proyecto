@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+        body { background: #24303c; }
+        table, th, td { border:1px solid black; }
+        table, th, td { border: 1px solid white; border-collapse: collapse; }
+        th, td { background-color: #96D4D4; }
+        th, td { border-style: dotted;}
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar Enfermero</title>
+</head>
+
+<body>
+       <h1 style="color: white;">Modificar Enfermero</h1>
+        <form method="POST">
+            <table>{{formulario}}</table>
+            <br>
+            <input type="submit" value="Grabar">
+            {% csrf_token %}
+            <a href="{%url 'inicio'%}"><button type="button" onclick=" ">Menu Principal</button></a>
+            <br>
+            <br>
+            <img src="https://i.pinimg.com/originals/44/e2/41/44e241416971300000aa40f2dabed7aa.gif" width="250" height="200">
+        </form>
+</body>
+</html>
